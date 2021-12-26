@@ -7,8 +7,5 @@
     "uploader"
   ],
   "homepage": "http://gd32mcu.com/en/download?kw=GigaDevice+GD-Link+Programmer",
-  "system": [
-    "windows_x86",
-    "windows_amd64"
-  ]
+  "system": "all"
 }
