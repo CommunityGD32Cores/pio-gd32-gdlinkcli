@@ -38,8 +38,8 @@
 		</fields>
     </OPByte>		
 	<OPByte>
-		<name>FMC_OBUSR</name>
-		<displayName>FMC_OBUSR</displayName>
+		<name>FMC_OBUSER</name>
+		<displayName>FMC_OBUSER</displayName>
 		<addressOffset>0x04</addressOffset>
 		<size>0x20</size>
 		<access>read-write</access>
@@ -67,14 +67,14 @@
 			<field>
                 <name>SECM0_EPAGE</name>
                 <brief>End page of secure mark area 0</brief>
-                <description>End page of secure mark area 0</description>
+                <description>If DMP0_ACCFG is 1, this bits cannot be modified.&#x000A;If SECM0_EPAGE &lt; DMP0_EPAGE, SECERR bit will be set and discard this write.</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>10</bitWidth>
             </field>
 			<field>
                 <name>SECM0_SPAGE</name>
                 <brief>Start page of secure mark area 0</brief>
-                <description>Start page of secure mark area 0</description>
+                <description>If DMP0_ACCFG is 1, this bits cannot be modified</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>10</bitWidth>
             </field>
@@ -92,7 +92,7 @@
 			<field>
                 <name>DMP0EN</name>
                 <brief>DMP area 0 enable</brief>
-                <description>DMP area 0 enable</description>
+                <description>0: disable.&#x000A;1: enable.</description>
                 <bitOffset>31</bitOffset>
                 <bitWidth>1</bitWidth>
             </field>
@@ -142,14 +142,14 @@
 			<field>
                 <name>SECM1_EPAGE</name>
                 <brief>End page of secure mark area 1</brief>
-                <description>End page of secure mark area 1</description>
+                <description>If DMP1_ACCFG is 1, this bits cannot be modified.&#x000A;If SECM1_EPAGE &lt; DMP1_EPAGE, SECERR bit will be set and discard this write.</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>10</bitWidth>
             </field>
 			<field>
                 <name>SECM1_SPAGE</name>
                 <brief>Start page of secure mark area 1</brief>
-                <description>Start page of secure mark area 1</description>
+                <description>If DMP1_ACCFG is 1, this bits cannot be modified</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>10</bitWidth>
             </field>
@@ -167,7 +167,7 @@
 			<field>
                 <name>DMP1EN</name>
                 <brief>DMP area 1 enable</brief>
-                <description>DMP area 1 enable</description>
+                <description>0: disable&#x000A;1: enable</description>
                 <bitOffset>31</bitOffset>
                 <bitWidth>1</bitWidth>
             </field>
@@ -530,8 +530,8 @@
 		<fields>
 			<field>
                 <name>RKEY_0[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -547,8 +547,8 @@
 		<fields>
 			<field>
                 <name>RKEY_1[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -564,8 +564,8 @@
 		<fields>
 			<field>
                 <name>RKEY_2[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -581,8 +581,8 @@
 		<fields>
 			<field>
                 <name>RKEY_3[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -598,8 +598,8 @@
 		<fields>
 			<field>
                 <name>RKEY_4[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -615,8 +615,8 @@
 		<fields>
 			<field>
                 <name>RKEY_5[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -632,8 +632,8 @@
 		<fields>
 			<field>
                 <name>RKEY_6[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>
@@ -649,8 +649,8 @@
 		<fields>
 			<field>
                 <name>RKEY_7[31:0]</name>
-                <brief>Efuse AES key value</brief>
-                <description>Efuse AES key value</description>
+                <brief>EFUSE RoTPK or its hash value</brief>
+                <description>EFUSE RoTPK or its hash value</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>32</bitWidth>
             </field>

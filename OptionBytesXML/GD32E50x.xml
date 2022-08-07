@@ -49,6 +49,13 @@
 		<reset>0xFF</reset>
         <complement>FFFF</complement>
         <fields>
+			<field>
+                <name>BOR_TH</name>
+                <brief>Brown out reset threshold</brief>
+                <description>BOR_TH&#x000A;00: BOR Level 3, brownout threshold level 3&#x000A;01: BOR Level 2, brownout threshold level 2&#x000A;10: BOR Level 1, brownout threshold level 1&#x000A;11: BOR off</description>
+                <bitOffset>6</bitOffset>
+                <bitWidth>2</bitWidth>
+            </field>
             <field>
                 <name>nRST_STDBY</name>
                 <brief>Generate a reset instead of entering standby mode</brief>

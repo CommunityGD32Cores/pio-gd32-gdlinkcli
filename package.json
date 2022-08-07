@@ -1,6 +1,6 @@
 {
   "name": "tool-gdlinkcli",
-  "version": "2.40501.211223",
+  "version": "2.40611.220807",
   "description": "GD-Link programmer is a tool to program GD series MCU. With GD-Link programmer, user can download the application program to MCU’s internal flash memory, set read and write protection, etc. And the programmer also supports GD-Link offline download function.",
   "keywords": [
     "tools",

@@ -46,7 +46,7 @@
                 <name>BOR_TH</name>
                 <brief>BOR_TH (Brown out reset threshold)</brief>
                 <description>BOR_TH&#x000A;00: BOR threshold value 3&#x000A;01: BOR threshold value 2&#x000A;10: BOR threshold value 1&#x000A;11: NO BOR function</description>
-                <bitOffset>1</bitOffset>
+                <bitOffset>2</bitOffset>
                 <bitWidth>2</bitWidth>
             </field>
         </fields>
@@ -312,7 +312,7 @@
 		<lockBaseAddress>0x1FFF7A00</lockBaseAddress>
 		<BlockCnt>0x10</BlockCnt>
 		<baseAddress>0x1FFF7800</baseAddress>
-		<endAddress>0x1FFF781F</endAddress>
+		<endAddress>0x1FFF7A0F</endAddress>
         <fields>
 		   <field>
                 <name>OTP_Lock0</name>

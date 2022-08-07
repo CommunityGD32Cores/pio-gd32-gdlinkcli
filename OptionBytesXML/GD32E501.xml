@@ -5,10 +5,10 @@
 </OPBytesBlocks>
 <Architectures>
     <Architecture type="0x0">
-		<FB_MODE baseAddress="0x1FFFF800" byteOffset = "0x2" bitOffset="0x7" bitWidth="0x01" value="0x0"/>
+		<Condition key = "FB_MODE" baseAddress="0x1FFFF800" byteOffset = "0x2" bitOffset="0x7" bitWidth="0x01" value="0x0"/>
 	</Architecture>
 	<Architecture type="0x1">
-		<FB_MODE baseAddress="0x1FFFF800" byteOffset = "0x2" bitOffset="0x7" bitWidth="0x01" value="0x1"/>
+		<Condition key = "FB_MODE" baseAddress="0x1FFFF800" byteOffset = "0x2" bitOffset="0x7" bitWidth="0x01" value="0x1"/>
 	</Architecture>
 </Architectures>
 <OPBytesArchitecture type = "0">
@@ -23,7 +23,7 @@
         <complement>FFFF</complement>
         <fields>
             <field>
-                <name>SPC</name>
+                <name>OB_SPC</name>
                 <brief>Option byte security protection value</brief>
                 <description>Option byte security protection value&#x000A;0xA5 : no security protection&#x000A;any value except 0xA5 or 0xCC : protection level low&#x000A;0xCC : protection level high</description>
                 <bitOffset>0</bitOffset>
@@ -41,7 +41,7 @@
         <complement>0</complement>
         <fields>
             <field>
-                <name>SPC_N</name>
+                <name>OB_SPC_N</name>
                 <brief>SPC complement value</brief>
                 <description>SPC complement value</description>
                 <bitOffset>0</bitOffset>
@@ -557,7 +557,7 @@
         <complement>FFFF</complement>
         <fields>
             <field>
-                <name>SPC</name>
+                <name>OB_SPC</name>
                 <brief>Option byte security protection value</brief>
                 <description>Option byte security protection value&#x000A;0xA5 : no security protection&#x000A;any value except 0xA5 or 0xCC : protection level low&#x000A;0xCC : protection level high</description>
                 <bitOffset>0</bitOffset>
@@ -575,7 +575,7 @@
         <complement>0</complement>
         <fields>
             <field>
-                <name>SPC_N</name>
+                <name>OB_SPC_N</name>
                 <brief>SPC complement value</brief>
                 <description>SPC complement value</description>
                 <bitOffset>0</bitOffset>
@@ -1079,31 +1079,3 @@
     </OPByte>
     </OPBytes>
 </OPBytesArchitecture>
-<OTPBytesBlocks>
-    <OTPBlocks baseAddress="0x1FFF7000" length="4096"/>
-</OTPBytesBlocks>
-<OTPBytes baseAddress="0x1FFF7000" length="4096">
-    <OTPBlocks>
-        <name>OTP</name>
-		<displayName>OTP</displayName>
-        <minProgrammeWidth>0x40</minProgrammeWidth>
-		<maxProgrammeWidth>0x40</maxProgrammeWidth>
-		<lockBaseAddress>0x0</lockBaseAddress>
-		<BlockCnt>0x01</BlockCnt>
-		<baseAddress>0x1FFF7000</baseAddress>
-		<endAddress>0x1FFF7FFF</endAddress>
-        <fields>
-		   <field>
-                <name>OTP_Block</name>
-				<displayName>OTP_Block</displayName>
-                <baseAddress>0x1FFF7000</baseAddress>
-		        <endAddress>0x1FFF7FFF</endAddress>	
-				<ifHasLockArea>0x0</ifHasLockArea>
-				<size>0x1000</size>
-				<lockOffset>0x00</lockOffset>
-				<lockbitWidth>0</lockbitWidth>
-				<LockVal>0</LockVal>
-            </field>
-        </fields>
-    </OTPBlocks>
-</OTPBytes>
