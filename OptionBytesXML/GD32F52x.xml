@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OPBytesBlocks>
+    <OPBytesBlock baseAddress="0x1FFFC000" length="16"/>
+	<OPBytesBlock baseAddress="0x1FFEC000" length="16"/>
+</OPBytesBlocks>
+<OPBytes baseAddress="0x1FFFC000" length="16">
+		<OPByte>
+			<name>USER</name>
+			<displayName>USER</displayName>
+			<addressOffset>0x0</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xEF</reset>		
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>nRST_STDBY</name>
+					<brief>Option byte standby reset value.</brief>
+					<description>nRST_STDBY&#x000A;0: generate a reset instead of entering standby mode&#x000A;1: no reset when entering standby mode</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>nRST_DPSLP</name>
+					<brief>Option byte deepsleep reset value.</brief>
+					<description>nRST_DPSLP&#x000A;0: generate a reset instead of entering Deep-sleep mode&#x000A;1: no reset when entering Deep-sleep mode</description>
+					<bitOffset>6</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>nWDG_HW</name>
+					<brief>Option byte watchdog value.</brief>
+					<description>nWDG_HW&#x000A;0: hardware free watchdog&#x000A;1: software free watchdog</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>BB</name>
+					<brief>Option byte boot bank value</brief>
+					<description>BB&#x000A;0: boot from bank0, when configured boot from main memory (default value)&#x000A;1: boot from bank1 or bank0 if bank1 is void, when configured boot from main memory</description>
+					<bitOffset>4</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>BOR_TH</name>
+					<brief>Option byte BOR threshold value.</brief>
+					<description>BOR_TH&#x000A;00: BOR threshold value 3&#x000A;01: BOR threshold value 2&#x000A;10: BOR threshold value 1&#x000A;11: NO BOR function</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>2</bitWidth>
+				</field>
+				<field>
+					<name>ECCEN</name>
+					<brief>ECC enable bit.</brief>
+					<description>ECCEN&#x000A;0: disable ECC&#x000A;1: enable ECC (Default value)</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+		<OPByte>
+			<name>SPC</name>
+			<displayName>SPC</displayName>
+			<addressOffset>0x1</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xAA</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>SPC</name>
+					<brief>Option byte security protection code</brief>
+					<description>Option byte security protection code&#x000A;0xAA: No protection&#x000A;any value except 0xAA or 0xCC: Protection level low&#x000A;0xCC: Protection level high</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>8</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+		<OPByte>
+			<name>WP0[7:0]</name>
+			<displayName>WP0[7:0]</displayName>
+			<addressOffset>0x8</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xFF</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>WP0[7]</name>
+					<brief>0x08060000~0x0807FFFF</brief>
+					<description>Sector Erase/Program Protection bit 7(0x08060000~0x0807FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[6]</name>
+					<brief>0x08040000~0x0805FFFF</brief>
+					<description>Sector Erase/Program Protection bit 6(0x08040000~0x0805FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>6</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[5]</name>
+					<brief>0x08020000~0x0803FFFF</brief>
+					<description>Sector Erase/Program Protection bit 5(0x08020000~0x0803FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[4]</name>
+					<brief>0x08010000~0x0801FFFF</brief>
+					<description>Sector Erase/Program Protection bit 4(0x08010000~0x0801FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>4</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[3]</name>
+					<brief>0x0800C000~0x0800FFFF</brief>
+					<description>Sector Erase/Program Protection bit 3(0x0800C000~0x0800FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[2]</name>
+					<brief>0x08008000~0x0800BFFF</brief>
+					<description>Sector Erase/Program Protection bit 2(0x08008000~0x0800BFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[1]</name>
+					<brief>0x08004000~0x08007FFF</brief>
+					<description>Sector Erase/Program Protection bit 1(0x08004000~0x08007FFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[0]</name>
+					<brief>0x8000000~0x8003FFF</brief>
+					<description>Sector Erase/Program Protection bit 0(0x8000000~0x8003FFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+		<OPByte>
+			<name>WP0</name>
+			<displayName>WP0</displayName>
+			<addressOffset>0x9</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0x3F</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>DRP</name>
+					<brief>CBUS read protection bit</brief>
+					<description>DRP (CBUS read protection bit)&#x000A;0: The WP0 bits used as erase/program protection of each sector (Default value)&#x000A;1: The WP0 bits used as erase/program protection and D-bus read protection of each sector</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>NWA</name>
+					<brief>Select no waiting time area.</brief>
+					<description>No wait time area select&#x000A;0: Bank1&#x000A;1: Bank0 (Default value)</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[11]</name>
+					<brief>0x080E0000~0x080FFFFF</brief>
+					<description>Sector Erase/Program Protection bit 11(0x080E0000~0x080FFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[10]</name>
+					<brief>0x080C0000~0x080DFFFF</brief>
+					<description>Sector Erase/Program Protection bit 10(0x080C0000~0x080DFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[9]</name>
+					<brief>0x080A0000~0x080BFFFF</brief>
+					<description>Sector Erase/Program Protection bit 9(0x080A0000~0x080BFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[8]</name>
+					<brief>0x08080000~0x0809FFFF</brief>
+					<description>Sector Erase/Program Protection bit 8(0x08080000~0x0809FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>  
+		<OPByte>
+			<name>WP0[19:12]</name>
+			<displayName>WP0[19:12]</displayName>
+			<addressOffset>0xC</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xFF</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>WP0[19]</name>
+					<brief>0x081E0000~0x081FFFFF</brief>
+					<description>Sector Erase/Program Protection bit 19(0x081E0000~0x081FFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[18]</name>
+					<brief>0x081C0000~0x081DFFFF</brief>
+					<description>Sector Erase/Program Protection bit 18(0x081C0000~0x081DFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>6</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[17]</name>
+					<brief>0x081A0000~0x081BFFFF</brief>
+					<description>Sector Erase/Program Protection bit 17(0x081A0000~0x081BFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[16]</name>
+					<brief>0x08180000~0x0819FFFF</brief>
+					<description>Sector Erase/Program Protection bit 16(0x08180000~0x0819FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>4</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[15]</name>
+					<brief>0x08160000~0x0817FFFF</brief>
+					<description>Sector Erase/Program Protection bit 15(0x08160000~0x0817FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[14]</name>
+					<brief>0x08140000~0x0815FFFF</brief>
+					<description>Sector Erase/Program Protection bit 14(0x08140000~0x0815FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[13]</name>
+					<brief>0x08120000~0x0813FFFF</brief>
+					<description>Sector Erase/Program Protection bit 13(0x08120000~0x0813FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP0[12]</name>
+					<brief>0x08100000~0x0811FFFF</brief>
+					<description>Sector Erase/Program Protection bit 12(0x08100000~0x0811FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+</OPBytes>
+<OPBytes baseAddress="0x1FFEC000" length="16">
+		<OPByte>
+			<name>WP1[7:0]</name>
+			<displayName>WP1[7:0]</displayName>
+			<addressOffset>0x08</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xFF</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>WP1[7]</name>
+					<brief>0x08260000~0x0827FFFF</brief>
+					<description>Sector Erase/Program Protection bit 7 for Bank1(0x08260000~0x0827FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[6]</name>
+					<brief>0x08240000~0x0825FFFF</brief>
+					<description>Sector Erase/Program Protection bit 6 for Bank1(0x08240000~0x0825FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>6</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[5]</name>
+					<brief>0x08220000~0x0823FFFF</brief>
+					<description>Sector Erase/Program Protection bit 5 for Bank1(0x08220000~0x0823FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[4]</name>
+					<brief>0x08210000~0x0821FFFF</brief>
+					<description>Sector Erase/Program Protection bit 4 for Bank1(0x08210000~0x0821FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>4</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[3]</name>
+					<brief>0x0820C000~0x0820FFFF</brief>
+					<description>Sector Erase/Program Protection bit 3 for Bank1(0x0820C000~0x0820FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[2]</name>
+					<brief>0x08208000~0x0820BFFF</brief>
+					<description>Sector Erase/Program Protection bit 2 for Bank1(0x08208000~0x0820BFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[1]</name>
+					<brief>0x08204000~0x08207FFF</brief>
+					<description>Sector Erase/Program Protection bit 1 for Bank1(0x08204000~0x08207FFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[0]</name>
+					<brief>0x08200000~0x08203FFF</brief>
+					<description>Sector Erase/Program Protection bit 0 for Bank1(0x08200000~0x08203FFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+		<OPByte>
+			<name>WP1</name>
+			<displayName>WP1</displayName>
+			<addressOffset>0x09</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xFF</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>WP1[11]</name>
+					<brief>0x082E0000~0x082FFFFF</brief>
+					<description>Sector Erase/Program Protection bit 11 for Bank1(0x082E0000~0x082FFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[10]</name>
+					<brief>0x082C0000~0x082DFFFF</brief>
+					<description>Sector Erase/Program Protection bit 10 for Bank1(0x082C0000~0x082DFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[9]</name>
+					<brief>0x082A0000~0x082BFFFF</brief>
+					<description>Sector Erase/Program Protection bit 9 for Bank1(0x082A0000~0x082BFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[8]</name>
+					<brief>0x08280000~0x0829FFFF</brief>
+					<description>Sector Erase/Program Protection bit 8 for Bank1(0x08280000~0x0829FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+		<OPByte>
+			<name>WP1[19:12]</name>
+			<displayName>WP1[19:12]</displayName>
+			<addressOffset>0x0C</addressOffset>
+			<size>0x8</size>
+			<access>read-write</access>
+			<reset>0xFF</reset>
+			<complement>FFFF</complement>
+			<fields>
+				<field>
+					<name>WP1[19]</name>
+					<brief>0x083E0000~0x0877FFFF</brief>
+					<description>Bit 19 controls the protection of the rest flash memory(0x083E0000~0x0877FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>7</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[18]</name>
+					<brief>0x083C0000~0x083DFFFF</brief>
+					<description>Sector Erase/Program Protection bit 18 for Bank1(0x083C0000~0x083DFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>6</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[17]</name>
+					<brief>0x083A0000~0x083BFFFF</brief>
+					<description>Sector Erase/Program Protection bit 17 for Bank1(0x083A0000~0x083BFFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>5</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[16]</name>
+					<brief>0x08380000~0x0839FFFF</brief>
+					<description>Sector Erase/Program Protection bit 16 for Bank1(0x08380000~0x0839FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>4</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[15]</name>
+					<brief>0x08360000~0x0837FFFF</brief>
+					<description>Sector Erase/Program Protection bit 15 for Bank1(0x08360000~0x0837FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>3</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[14]</name>
+					<brief>0x08340000~0x0835FFFF</brief>
+					<description>Sector Erase/Program Protection bit 14 for Bank1(0x08340000~0x0835FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>2</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[13]</name>
+					<brief>0x08320000~0x0833FFFF</brief>
+					<description>Sector Erase/Program Protection bit 13 for Bank1(0x08320000~0x0833FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>1</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+				<field>
+					<name>WP1[12]</name>
+					<brief>0x08300000~0x0831FFFF</brief>
+					<description>Sector Erase/Program Protection bit 12 for Bank1(0x08300000~0x0831FFFF)&#x000A;0: Erase/program protection when DRP is 0. No effect when DRP is 1&#x000A;1: No effect when DRP is 0. Erase/program protection and D-bus read protection when DRP is 1</description>
+					<bitOffset>0</bitOffset>
+					<bitWidth>1</bitWidth>
+				</field>
+			</fields>
+		</OPByte>
+</OPBytes>

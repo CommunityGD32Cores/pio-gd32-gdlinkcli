@@ -142,7 +142,7 @@
         <displayName>WP0</displayName>
         <addressOffset>0x9</addressOffset>
         <size>0x8</size>
-        <access>read</access>
+        <access>read-write</access>
 		<reset>0x3F</reset>
         <complement>FFFF</complement>
         <fields>
@@ -265,7 +265,7 @@
         <displayName>WP1</displayName>
         <addressOffset>0x09</addressOffset>
         <size>0x8</size>
-        <access>read</access>
+        <access>read-write</access>
 		<reset>0xFF</reset>
         <complement>FFFF</complement>
         <fields>

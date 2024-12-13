@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OPBytesBlocks>
+	<OPBytesBlock baseAddress="0x1FFF7800" length="120" RegType="OptionBytes"/>
+</OPBytesBlocks>
+<OPBytes baseAddress="0x1FFF7800" length="120" RegType="OptionBytes">
+	<OPByte>
+		<name>OB_SPC</name>
+		<displayName>OB_SPC</displayName>
+		<addressOffset>0x0</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>A5</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>OB_SPC</name>
+				<brief>option byte Security Protection Code</brief>
+				<description>option byte Security Protection Code&#x000A;0xA5: No protection &#x000A;0xCC: Protection level high &#x000A;Any value except 0xA5 or 0xCC: Protection level low.</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER[7:0]</name>
+		<displayName>OB_USER[7:0]</displayName>
+		<addressOffset>0x1</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>FFFF</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>nRST_STDBY</name>
+				<brief>nRST_STDBY</brief>
+				<description>nRST_STDBY&#x000A;0: Generates a reset if entering standby mode&#x000A;1: No reset if entering standby mode</description>
+				<bitOffset>6</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>nRST_DPSLP</name>
+				<brief>nRST_DPSLP</brief>
+				<description>nRST_DPSLP&#x000A;0: Generates a reset if entering Deep-sleep mode&#x000A;1: No reset if entering Deep-sleep mode</description>
+				<bitOffset>5</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>BORF_TH</name>
+				<brief>BORF_TH</brief>
+				<description>BORF_TH&#x000A;00: BOR falling level 1 with threshold around 2.0 V&#x000A;01: BOR falling level 2 with threshold around 2.2 V&#x000A;10: BOR falling level 3 with threshold around 2.5 V&#x000A;11: BOR falling level 4 with threshold around 2.8 V</description>
+				<bitOffset>3</bitOffset>
+				<bitWidth>2</bitWidth>
+			</field>
+			<field>
+				<name>BORR_TH</name>
+				<brief>BORR_TH</brief>
+				<description>BORR_TH&#x000A;00: BOR rising level 1 with threshold around 2.1 V&#x000A;01: BOR rising level 1 with threshold around 2.3 V&#x000A;10: BOR rising level 1 with threshold around 2.6 V&#x000A;11: BOR rising level 1 with threshold around 2.9 V</description>
+				<bitOffset>1</bitOffset>
+				<bitWidth>2</bitWidth>
+			</field>
+			<field>
+				<name>BORST_EN</name>
+				<brief>BORST_EN</brief>
+				<description>BORST_EN&#x000A;0: Brown out reset disable, power-on reset defined by POR/PDR levels&#x000A;1: Brown out reset enable, values of BORR_TH and BORF_TH taken into account</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER[15:8]</name>
+		<displayName>OB_USER[15:8]</displayName>
+		<addressOffset>0x2</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>FFFF</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>SRAM_ECCEN</name>
+				<brief>SRAM_ECCEN</brief>
+				<description>SRAM_ECCEN&#x000A;0: SRAM ECC enable&#x000A;1: SRAM ECC disable</description>
+				<bitOffset>6</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>HXTAL_REMAP</name>
+				<brief>HXTAL_REMAP</brief>
+				<description>HXTAL_REMAP&#x000A;0: Remapping enable&#x000A;1: Remapping disable</description>
+				<bitOffset>5</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>nWWDG_HW</name>
+				<brief>nWWDG_HW</brief>
+				<description>nWWDG_HW&#x000A;0: Hardware window watchdog&#x000A;1: Software window watchdog</description>
+				<bitOffset>3</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>nFWDG_HW</name>
+				<brief>nFWDG_HW</brief>
+				<description>nFWDG_HW&#x000A;0: Hardware free watchdog&#x000A;1: Software free watchdog</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER[23:16]</name>
+		<displayName>OB_USER[23:16]</displayName>
+		<addressOffset>0x3</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>FFFF</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>NRST_MDSEL</name>
+				<brief>NRST_MDSEL</brief>
+				<description>NRST_MDSEL&#x000A;00: Reserved&#x000A;01: A low level on the NRST pin can reset system, internal reset cannot drive NRST pin.&#x000A;10: NRST pin function as normal GPIO, and only internal RESET.&#x000A;11: NRST pin configure as input/output mode.</description>
+				<bitOffset>3</bitOffset>
+				<bitWidth>2</bitWidth>
+			</field>
+			<field>
+				<name>nBOOT0</name>
+				<brief>nBOOT0</brief>
+				<description>nBOOT0&#x000A;0: BOOT0 signal is 1&#x000A;1: BOOT0 signal is 0</description>
+				<bitOffset>2</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>nBOOT1</name>
+				<brief>nBOOT1</brief>
+				<description>nBOOT1&#x000A;0: BOOT1 signal is 1 &#x000A;1: BOOT1 signal is 0&#x000A;Together with the BOOT0 signal, this bit selects boot mode</description>
+				<bitOffset>1</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+			<field>
+				<name>SWBT0</name>
+				<brief>SWBT0</brief>
+				<description>SWBT0&#x000A;0: BOOT0 signal depends on PA14/BOOT0 pin &#x000A;1: BOOT0 signal depends on the option bit nBOOT0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_SPC_N</name>
+		<displayName>OB_SPC_N</displayName>
+		<addressOffset>0x4</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>5A</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>OB_SPC_N</name>
+				<brief>OB_SPC complement value</brief>
+				<description>OB_SPC complement value</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER_N[7:0]</name>
+		<displayName>OB_USER_N[7:0]</displayName>
+		<addressOffset>0x5</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>OB_USER_N[7:0]</name>
+				<brief>OB_USER complement value bit 7 to 0</brief>
+				<description>OB_USER complement value bit 7 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER_N[15:8]</name>
+		<displayName>OB_USER_N[15:8]</displayName>
+		<addressOffset>0x6</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>OB_USER_N[15:8]</name>
+				<brief>OB_USER complement value bit 15 to 8</brief>
+				<description>OB_USER complement value bit 15 to 8</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>OB_USER_N[23:16]</name>
+		<displayName>OB_USER_N[23:16]</displayName>
+		<addressOffset>0x7</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>OB_USER_N[23:16]</name>
+				<brief>OB_USER complement value bit 23 to 16</brief>
+				<description>OB_USER complement value bit 23 to 16</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP0_SADDR</name>
+		<displayName>DCRP0_SADDR</displayName>
+		<addressOffset>0x8</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>7F</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>DCRP area 0 start address</name>
+				<brief>DCRP area 0 start address</brief>
+				<description>DCRP area 0 start address</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP0_SADDR_N</name>
+		<displayName>DCRP0_SADDR_N</displayName>
+		<addressOffset>0xC</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>DCRP0_SADDR_N</name>
+				<brief>DCRP0_SADDR complement value bit 6 to 0</brief>
+				<description>DCRP0_SADDR complement value bit 6 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP0_EADDR</name>
+		<displayName>DCRP0_EADDR</displayName>
+		<addressOffset>0x10</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>DCRP area 0 end address</name>
+				<brief>DCRP area 0 end address</brief>
+				<description>DCRP area 0 end address</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP_EREN</name>
+		<displayName>DCRP_EREN</displayName>
+		<addressOffset>0x13</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>0: DCRP area is not erased when a SPC value is decreased from value 1 to value 0</name>
+				<brief>0: DCRP area is not erased when a SPC value is decreased from value 1 to value 0</brief>
+				<description>0: DCRP area is not erased when a SPC value is decreased from value 1 to value 0&#x000A;1: DCRP area is erased when a SPC value is decreased from value 1 to value 0</description>
+				<bitOffset>7</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP0_EADDR_N</name>
+		<displayName>DCRP0_EADDR_N</displayName>
+		<addressOffset>0x14</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>DCRP0_EADDR_N</name>
+				<brief>DCRP0_EADDR complement value bit 6 to 0</brief>
+				<description>DCRP0_EADDR complement value bit 6 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP_EREN_N</name>
+		<displayName>DCRP_EREN_N</displayName>
+		<addressOffset>0x17</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>DCRP_EREN complement value bit 7</name>
+				<brief>DCRP_EREN complement value bit 7</brief>
+				<description>DCRP_EREN complement value bit 7</description>
+				<bitOffset>7</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP0_SADDR</name>
+		<displayName>WP0_SADDR</displayName>
+		<addressOffset>0x18</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>3F</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>the first page of WP area 0</name>
+				<brief>the first page of WP area 0</brief>
+				<description>the first page of WP area 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>6</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP0_EADDR</name>
+		<displayName>WP0_EADDR</displayName>
+		<addressOffset>0x1A</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>the last page of WP area 0</name>
+				<brief>the last page of WP area 0</brief>
+				<description>the last page of WP area 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>6</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP0_SADDR_N</name>
+		<displayName>WP0_SADDR_N</displayName>
+		<addressOffset>0x1C</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>WP0_SADDR_N</name>
+				<brief>WP0_SADDR complement value bit 5 to 0</brief>
+				<description>WP0_SADDR complement value bit 5 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP0_EADDR_N</name>
+		<displayName>WP0_EADDR_N</displayName>
+		<addressOffset>0x1E</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>WP0_EADDR_N</name>
+				<brief>WP0_EADDR complement value bit 5 to 0</brief>
+				<description>WP0_EADDR complement value bit 5 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP1_SADDR</name>
+		<displayName>WP1_SADDR</displayName>
+		<addressOffset>0x20</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>3F</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>the first page of WP area 1</name>
+				<brief>the first page of WP area 1</brief>
+				<description>the first page of WP area 1</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>6</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP1_EADDR</name>
+		<displayName>WP1_EADDR</displayName>
+		<addressOffset>0x22</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>the last page of WP area 1</name>
+				<brief>the last page of WP area 1</brief>
+				<description>the last page of WP area 1</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>6</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP1_SADDR_N</name>
+		<displayName>WP1_SADDR_N</displayName>
+		<addressOffset>0x24</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>WP1_SADDR_N</name>
+				<brief>WP1_SADDR complement value bit 5 to 0</brief>
+				<description>WP1_SADDR complement value bit 5 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>WP1_EADDR_N</name>
+		<displayName>WP1_EADDR_N</displayName>
+		<addressOffset>0x26</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>WP1_EADDR_N</name>
+				<brief>WP1_EADDR complement value bit 5 to 0</brief>
+				<description>WP1_EADDR complement value bit 5 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP1_SADDR</name>
+		<displayName>DCRP1_SADDR</displayName>
+		<addressOffset>0x28</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>7F</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>DCRP area 1 start address</name>
+				<brief>DCRP area 1 start address</brief>
+				<description>DCRP area 1 start address</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP1_SADDR_N</name>
+		<displayName>DCRP1_SADDR_N</displayName>
+		<addressOffset>0x2C</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>DCRP1_SADDR_N</name>
+				<brief>DCRP1_SADDR complement value bit 6 to 0</brief>
+				<description>DCRP1_SADDR complement value bit 6 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP1_EADDR</name>
+		<displayName>DCRP1_EADDR</displayName>
+		<addressOffset>0x30</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>DCRP1_EADDR DCRP area 1 end address</name>
+				<brief>DCRP1_EADDR DCRP area 1 end address</brief>
+				<description>DCRP1_EADDR DCRP area 1 end address</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>DCRP1_EADDR_N</name>
+		<displayName>DCRP1_EADDR_N</displayName>
+		<addressOffset>0x34</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>DCRP1_EADDR complement value bit 6 to 0</name>
+				<brief>DCRP1_EADDR complement value bit 6 to 0</brief>
+				<description>DCRP1_EADDR complement value bit 6 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>SCR_PAGE_CNT</name>
+		<displayName>SCR_PAGE_CNT</displayName>
+		<addressOffset>0x70</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>Configure the number of pages in secure user area.</name>
+				<brief>Configure the number of pages in secure user area.</brief>
+				<description>Configure the number of pages in secure user area.</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>BOOTLK</name>
+		<displayName>BOOTLK</displayName>
+		<addressOffset>0x72</addressOffset>
+		<size>0x8</size>
+		<access>read-write</access>
+		<reset>0</reset>
+		<complement>FFFF</complement>
+		<fields>
+			<field>
+				<name>This bit is set to force boot from user flash area.</name>
+				<brief>This bit is set to force boot from user flash area.</brief>
+				<description>This bit is set to force boot from user flash area.&#x000A;0: Support flash, ram and system boot&#x000A;1: Only boot from main flash</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>1</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>SCR_PAGE_CNT_N</name>
+		<displayName>SCR_PAGE_CNT_N</displayName>
+		<addressOffset>0x75</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>SCR_PAGE_CNT complement value bit 6 to 0</name>
+				<brief>SCR_PAGE_CNT complement value bit 6 to 0</brief>
+				<description>SCR_PAGE_CNT complement value bit 6 to 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>7</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+	<OPByte>
+		<name>BOOTLK_N</name>
+		<displayName>BOOTLK_N</displayName>
+		<addressOffset>0x77</addressOffset>
+		<size>0x8</size>
+		<access>read</access>
+		<reset>FFFF</reset>
+		<complement>0</complement>
+		<fields>
+			<field>
+				<name>BOOTLK_N</name>
+				<brief>BOOTLK complement value bit 0</brief>
+				<description>BOOTLK complement value bit 0</description>
+				<bitOffset>0</bitOffset>
+				<bitWidth>8</bitWidth>
+			</field>
+		</fields>
+	</OPByte>
+</OPBytes>
+<OTPBytesBlocks>
+    <OTPBlocks baseAddress="0x1FFF7000" length="1024"/>
+</OTPBytesBlocks>
+<OTPBytes baseAddress="0x1FFF7000" length="1024">
+    <OTPBlocks>
+        <name>OTP</name>
+		<displayName>OTP</displayName>
+        <minProgrammeWidth>0x20</minProgrammeWidth>
+		<maxProgrammeWidth>0x20</maxProgrammeWidth>
+		<lockBaseAddress>0x0</lockBaseAddress>
+		<BlockCnt>0x01</BlockCnt>
+		<baseAddress>0x1FFF7000</baseAddress>
+		<endAddress>0x1FFF73FF</endAddress>
+        <fields>
+		   <field>
+                <name>OTP_Block</name>
+				<displayName>OTP_Block</displayName>
+                <baseAddress>0x1FFF7000</baseAddress>
+		        <endAddress>0x1FFF73FF</endAddress>	
+				<ifHasLockArea>0x0</ifHasLockArea>
+				<size>0x400</size>
+				<lockOffset>0x00</lockOffset>
+				<lockbitWidth>0</lockbitWidth>
+				<LockVal>0</LockVal>
+            </field>
+        </fields>
+    </OTPBlocks>
+</OTPBytes>
+
